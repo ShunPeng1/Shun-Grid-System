@@ -1,4 +1,4 @@
-﻿namespace Priority_Queue
+﻿namespace Shun_Grid_System.Priority_Queue
 {
     public class GenericPriorityQueueNode<TPriority>
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace Priority_Queue
+namespace Shun_Grid_System.Priority_Queue
 {
     /// <summary>
     /// A copy of FastPriorityQueue which is also stable - that is, when two nodes are enqueued with the same priority, they
