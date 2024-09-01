@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Shun_Grid_System
         protected Vector3 WorldOriginPosition;
         protected readonly Dictionary<CellIndex2D, GridCell2D> GridCells;
 
-        public SquareGrid2D(float cellWidthSize = 1f, float cellHeightSize = 1f,
+        public SquareGrid2D(ICellItem defaultItem = default, float cellWidthSize = 1f, float cellHeightSize = 1f,
             Vector3 worldOriginPosition = new Vector3(), int initWidth = 100, int initHeight = 100, bool isFixedSize = false)
         {
             IsFixedSize = isFixedSize;
@@ -36,7 +37,8 @@ namespace Shun_Grid_System
             {
                 for (int y = 0; y < initHeight; y++)
                 {
-                    GridCells[new CellIndex2D(x, y)] = default;
+                    var cloneDefaultItem = defaultItem?.Clone();
+                    GridCells[new CellIndex2D(x, y)] = new GridCell2D(new CellIndex2D(x, y), cloneDefaultItem);
                 }
             }
         }
@@ -115,6 +117,26 @@ namespace Shun_Grid_System
             var index = GetIndex(worldPosition);
             return GetCell(index);
         }
+        
+        public List<GridCell2D> QueryCells(Func<GridCell2D, bool> predicate = null)
+        {
+            if (predicate == null)
+            {
+                return new List<GridCell2D>(GridCells.Values);
+            }
+            
+            List<GridCell2D> result = new List<GridCell2D>();
+            foreach (var gridCell2D in GridCells.Values)
+            {
+                if (predicate(gridCell2D))
+                {
+                    result.Add(gridCell2D);
+                }
+            }
+
+            return result;
+        }
+        
 
 
         public Vector2Int GetIndexDifferenceFrom(GridCell2D subtrahendCell2D, GridCell2D minuendCell2D)

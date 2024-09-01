@@ -23,8 +23,8 @@ namespace Shun_Grid_System
     public class IsometricGrid2D : SquareGrid2D
     {
         
-        public IsometricGrid2D(float cellWidthSize = 1f, float cellHeightSize = 1f,
-            Vector3 worldOriginPosition = new Vector3(), int initWidth = 100, int initHeight = 100, bool isFixedSize = false) : base(cellWidthSize, cellHeightSize, worldOriginPosition, initWidth, initHeight, isFixedSize)
+        public IsometricGrid2D(ICellItem defaultItem = default, float cellWidthSize = 1f, float cellHeightSize = 1f,
+            Vector3 worldOriginPosition = new Vector3(), int initWidth = 100, int initHeight = 100, bool isFixedSize = false) : base(defaultItem, cellWidthSize, cellHeightSize, worldOriginPosition, initWidth, initHeight, isFixedSize)
         {
         }
         

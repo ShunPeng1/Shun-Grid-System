@@ -13,13 +13,13 @@ namespace Shun_Grid_System
         public CellIndex2D Index { get; }
         public ICellItem Item { get; set; }
 
-        protected GridCell2D(CellIndex2D cellIndex, ICellItem item = default)
+        public GridCell2D(CellIndex2D cellIndex, ICellItem item = default)
         {
             Index = cellIndex;
             Item = item;
         }
 
-        public void AddAdjacentCell(IGridCell cell, ICellTransition transition) 
+        public void AddAdjacentCell(IGridCell cell, ICellTransition transition = null) 
         {
             if (cell is not GridCell2D baseGridCell2D || AdjacentCells.ContainsKey(baseGridCell2D))
             {
