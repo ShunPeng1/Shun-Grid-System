@@ -85,12 +85,12 @@ namespace Shun_Grid_System
 
         public void SetIndex(ICellIndex index)
         {
-            throw new NotImplementedException();
+            Index = index as CellIndex2D;
         }
 
         public ICellIndex GetIndex()
         {
-            throw new NotImplementedException();
+            return Index;
         }
 
         public void SetItem(ICellItem item)
