@@ -11,8 +11,6 @@ namespace Shun_Grid_System
         void ClearAdjacentCell();
         void SetTransition(IGridCell cell, ICellTransition transition);
         void RemoveTransition(IGridCell cell);
-        
-        void SetIndex(ICellIndex index);
         ICellIndex GetIndex();
         
         void SetItem(ICellItem item);

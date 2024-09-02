@@ -83,11 +83,6 @@ namespace Shun_Grid_System
             AdjacentCells.Remove(baseGridCell2D);
         }
 
-        public void SetIndex(ICellIndex index)
-        {
-            Index = index as CellIndex2D;
-        }
-
         public ICellIndex GetIndex()
         {
             return Index;
