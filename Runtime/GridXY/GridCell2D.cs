@@ -9,12 +9,14 @@ namespace Shun_Grid_System
     [Serializable]
     public class GridCell2D : IGridCell
     {
+        public SquareGrid2D Grid { get; }
         public Dictionary<GridCell2D, ICellTransition> AdjacentCells { get; } = new();
         public CellIndex2D Index { get; }
         public ICellItem Item { get; set; }
 
-        public GridCell2D(CellIndex2D cellIndex, ICellItem item = default)
+        public GridCell2D(SquareGrid2D grid, CellIndex2D cellIndex, ICellItem item = default)
         {
+            Grid = grid
             Index = cellIndex;
             Item = item;
         }

@@ -38,7 +38,7 @@ namespace Shun_Grid_System
                 for (int y = 0; y < initHeight; y++)
                 {
                     var cloneDefaultItem = defaultItem?.Clone();
-                    GridCells[new CellIndex2D(x, y)] = new GridCell2D(new CellIndex2D(x, y), cloneDefaultItem);
+                    GridCells[new CellIndex2D(x, y)] = new GridCell2D(this, new CellIndex2D(x, y), cloneDefaultItem);
                 }
             }
         }
