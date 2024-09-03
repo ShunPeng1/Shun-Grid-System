@@ -16,7 +16,7 @@ namespace Shun_Grid_System
 
         public GridCell2D(SquareGrid2D grid, CellIndex2D cellIndex, ICellItem item = default)
         {
-            Grid = grid
+            Grid = grid;
             Index = cellIndex;
             Item = item;
         }
