@@ -4,8 +4,8 @@ namespace Shun_Grid_System
 {
     public struct CellIndex2D : ICellIndex
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int X;
+        public int Y;
 
         public CellIndex2D(int x, int y)
         {

@@ -93,10 +93,12 @@ namespace Shun_Grid_System
         public void SetItem(ICellItem item)
         {
             Item = item;
+            item.SetCell(this);
         }
 
         public void RemoveItem()
         {
+            Item.SetCell(null);
             Item = null;
         }
 
